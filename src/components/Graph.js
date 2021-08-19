@@ -19,10 +19,6 @@ const Graph = ({ coinData }) => {
     ],
   };
   const options = {
-    layout: {
-      padding: 150,
-    },
-
     scales: {
       y: {
         ticks: {
