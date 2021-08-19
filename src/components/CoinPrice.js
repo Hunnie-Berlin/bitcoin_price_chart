@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Graph from "./Graph";
 import styled from "styled-components";
 
+// define Styled Components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,6 +65,7 @@ const Button = styled.button`
 `;
 
 const CoinPrice = () => {
+  // Date Picker
   const todayDate = new Date();
   const tenDaysAgo = new Date();
   tenDaysAgo.setDate(todayDate.getDate() - 10);
@@ -73,8 +75,8 @@ const CoinPrice = () => {
   const end = endDate.toISOString().split("T")[0];
   if (startDate > endDate) setStartDate(endDate);
 
+  // fetch Bitcoin Prices
   const [bitPrice, setBitPrice] = useState(null);
-
   const fetchData = async (start, end) => {
     if (isValidDate(start) && isValidDate(end)) {
       if (checkDateOrder(start, end)) {
@@ -95,6 +97,7 @@ const CoinPrice = () => {
     }
   };
 
+  // onSubmit Render Button
   const onSubmit = () => {
     try {
       fetchData(start, end);

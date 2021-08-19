@@ -8,6 +8,7 @@ const isLeapYear = (year) => {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 };
 
+// check if start date is earlier than end date
 export const checkDateOrder = (start, end) => {
   const [yy1, mm1, dd1] = start.split("-");
   const [yy2, mm2, dd2] = end.split("-");
@@ -17,6 +18,7 @@ export const checkDateOrder = (start, end) => {
   return true;
 };
 
+// check if the date format is valid
 export const isValidDate = (dateString) => {
   const date = dateString.split("-");
   const [yy, mm, dd] = date;
@@ -35,6 +37,7 @@ export const isValidDate = (dateString) => {
   }
 };
 
+// fetching data using axios
 export const getPriceHistory = (startDate, endDate) =>
   api.get(`historical/close.json?start=${startDate}&end=${endDate}`);
 
