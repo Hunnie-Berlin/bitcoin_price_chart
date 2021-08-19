@@ -1,6 +1,6 @@
 # Bitcoin Price Chart
 
-- [ ] install dependencies
+- [x] install dependencies
 - [ ] Coin API test
 - [ ] Date Picker
 - [ ] fetching data with Axios
